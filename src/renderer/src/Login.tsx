@@ -1,5 +1,5 @@
 import electronLogo from './assets/electron.svg'
-import { Button, Form, Stack, Alert, InputGroup } from 'react-bootstrap'
+import { Button, Form, Stack, Alert, InputGroup, Container } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import Versao from './components/Versao';
@@ -22,6 +22,10 @@ function Login(): JSX.Element {
             setSenha(savedPassword);
             setRemember(true);
         }
+        document.body.classList.add("login-page");
+        return () => {
+            document.body.classList.remove("login-page"); // Remove ao sair
+        };
     }, []);
 
     function validarLogin(event) {
@@ -47,6 +51,7 @@ function Login(): JSX.Element {
 
     return (
         <>
+        <Container className='container-fluid d-flex justify-content-center align-items-center flex-column'>
             <img alt="logo" className="logo" src={electronLogo} />
             <h1>ERP-Lite</h1>
             {erro && <Alert variant='danger'>{erro}</Alert>}
@@ -74,7 +79,7 @@ function Login(): JSX.Element {
                             </InputGroup.Text>
                         </InputGroup>
                         {validacao && !senha && (
-                            <Form.Text className="text-danger">
+                            <Form.Text className="text-dangerr">
                                 Senha não informada!
                             </Form.Text>
                         )}
@@ -90,7 +95,8 @@ function Login(): JSX.Element {
                     <Button type='submit' variant='primary'>Login</Button>
                 </Stack>
             </Form>
-            <Versao />
+        </Container>
+        <Versao />
         </>
     );
 }

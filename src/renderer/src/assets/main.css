@@ -1,13 +1,34 @@
-@import './base.css';
+/* @import './base.css'; */
 
-body {
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+body.login-page{
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url('./wavy-lines.svg');
+  background-size: cover;
+  cursor: default;
+  font-size: 16px;
+  overflow-x: hidden;
+  user-select: none;
   display: flex;
-  align-items: center;
   justify-content: center;
-  overflow: hidden;
+  align-items: center;
+  min-height: 100vh;
+}
+body.home-page{
+  display: block;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-image: url('./wavy-lines.svg');
   background-size: cover;
   user-select: none;
+  margin: 0px;
+  padding: 0px;
 }
 
 code {
@@ -25,15 +46,6 @@ code {
     monospace;
   font-size: 85%;
 }
-
-#root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 80px;
-}
-
 .logo {
   margin-bottom: 20px;
   -webkit-user-drag: none;
@@ -128,31 +140,40 @@ code {
   background-color: var(--ev-button-alt-hover-bg);
 }
 
-.versions {
-  position: absolute;
-  bottom: 30px;
-  margin: 0 auto;
-  padding: 15px 0;
-  font-family: 'Menlo', 'Lucida Console', monospace;
-  display: inline-flex;
-  overflow: hidden;
-  align-items: center;
-  border-radius: 22px;
-  background-color: #202127;
-  backdrop-filter: blur(24px);
+.text-dangerr{
+  color: var(--bs-form-invalid-color);
 }
 
-.versions li {
-  display: block;
-  float: left;
-  border-right: 1px solid var(--ev-c-gray-1);
-  padding: 0 20px;
-  font-size: 14px;
-  line-height: 14px;
-  opacity: 0.8;
-  &:last-child {
-    border: none;
-  }
+.versao{
+  border-radius: 30px;
+  padding: 0px 20px 1px 20px;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    SF Mono,
+    Menlo,
+    Consolas,
+    Liberation Mono,
+    monospace;
+}
+.versao li:first-child{
+  padding-left: 20px;
+}
+.versao li:nth-child(2) {
+  padding: 0px;
+}
+.link-github{
+  padding: 0px;
+  margin: 0px -10px 0px 0px;
+}
+.versao li:nth-child(3) {
+  padding: 0px 0px 0px 10px;
+}
+
+.versao li:not(:last-child)::after {
+  content: "|"; /* Adiciona a barra */
+  margin-left: 10px; /* Espaço antes da barra */
+  color: var(--bs-border-color); /* Cor da barra */
 }
 
 @media (max-width: 720px) {
@@ -166,10 +187,27 @@ code {
     display: none;
   }
 }
-
+@media (max-width: 500px) {
+  .text {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+}
 @media (max-width: 350px) {
   .tip,
   .actions {
     display: none;
+  }
+}
+
+[data-bs-theme="light"] {
+  .versao{
+    background-color: var(--bs-tertiary-bg);
+  }
+}
+
+[data-bs-theme="dark"] {
+  .versao{
+    background-color: var(--bs-tertiary-bg);
   }
 }

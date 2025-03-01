@@ -6,14 +6,18 @@ import icon from '../../resources/icon.png?asset'
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+    width: 1200, // Largura inicial
+    height: 800, // Altura inicial
+    minWidth: 320, // Permite reduzir até esse tamanho
+    minHeight: 480,
     show: false,
     autoHideMenuBar: true,
+    resizable: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
-      sandbox: false
+      sandbox: false,
+      nodeIntegration: false
     }
   })
 
