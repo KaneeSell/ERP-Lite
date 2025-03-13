@@ -1,0 +1,42 @@
+.input100{
+    max-width: 100px;
+}
+.input150{
+    max-width: 150px;
+}
+.input200{
+    max-width: 200px;
+}
+.input250{
+    max-width: 250px;
+}
+.input300{
+    max-width: 300px;
+}
+.input350{
+    max-width: 350px;
+}
+.input400{
+    max-width: 400px;
+}
+.input450{
+    max-width: 450px;
+}
+.inputGroupResponse{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+}
+@media(max-width: 1070px){
+    .inputGroupResponse{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column wrap;
+    }
+}
+.thSelect:hover{
+    background-color: aliceblue;
+}

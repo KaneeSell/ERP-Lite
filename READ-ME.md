@@ -1,34 +1,38 @@
-# erp-lite
+<p align="center"><img src="https://i.imgur.com/NZfsD1p.png"></p>
 
-An Electron application with React and TypeScript
+## Usage
 
-## Recommended IDE Setup
+### Create an App
 
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+```
+# with npx
+$ npx create-nextron-app my-app --example basic-lang-typescript
 
-## Project Setup
+# with yarn
+$ yarn create nextron-app my-app --example basic-lang-typescript
 
-### Install
-
-```bash
-$ npm install
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example basic-lang-typescript
 ```
 
-### Development
+### Install Dependencies
 
-```bash
-$ npm run dev
+```
+$ cd my-app
+
+# using yarn or npm
+$ yarn (or `npm install`)
+
+# using pnpm
+$ pnpm install --shamefully-hoist
 ```
 
-### Build
+### Use it
 
-```bash
-# For windows
-$ npm run build:win
+```
+# development mode
+$ yarn dev (or `npm run dev` or `pnpm run dev`)
 
-# For macOS
-$ npm run build:mac
-
-# For Linux
-$ npm run build:linux
+# production build
+$ yarn build (or `npm run build` or `pnpm run build`)
 ```
